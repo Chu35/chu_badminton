@@ -7,35 +7,51 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="calendar"></div>
-    <div id="job-form">
-        <h2>添加工作</h2>
-        <form id="add-job-form">
-            <label for="job-name">工作名稱:</label>
-            <input type="text" id="job-name" name="job-name" required>
-            <label for="start-time">開始時間:</label>
-            <input type="time" id="start-time" name="start-time" required>
-            <label for="end-time">結束時間:</label>
-            <input type="time" id="end-time" name="end-time" required>
-            <label for="hourly-wage">每小時薪資:</label>
-            <input type="number" id="hourly-wage" name="hourly-wage" required>
-            <button type="submit">添加</button>
-        </form>
-    </div>
-    <div id="monthly-stats">
-        <h2>當月收入統計</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>總工時</th>
-                    <th>總薪資</th>
-                </tr>
-            </thead>
-            <tbody id="stats-body"></tbody>
-        </table>
-    </div>
+    <header>
+        <h1>工作行事曆</h1>
+    </header>
+    
+    <main>
+        <section id="calendar-section">
+            <h2>行事曆</h2>
+            <div id="month-year-display"></div>
+            <div id="calendar"></div>
+            <button id="prev-month-btn">上一個月</button>
+            <button id="next-month-btn">下一個月</button>
+        </section>
+        
+        <section id="job-section">
+            <h2>添加工作</h2>
+            <form id="add-job-form">
+                <label for="job-name">工作名稱:</label>
+                <input type="text" id="job-name" name="job-name" required>
+                <label for="start-time">開始時間:</label>
+                <input type="time" id="start-time" name="start-time" required>
+                <label for="end-time">結束時間:</label>
+                <input type="time" id="end-time" name="end-time" required>
+                <label for="hourly-wage">每小時薪資:</label>
+                <input type="number" id="hourly-wage" name="hourly-wage" required>
+                <button type="submit">添加</button>
+            </form>
+            <div id="selected-date-info"></div>
+        </section>
+        
+        <section id="stats-section">
+            <h2>當月收入統計</h2>
+            <table id="stats-table">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>總工時</th>
+                        <th>總薪資</th>
+                    </tr>
+                </thead>
+                <tbody id="stats-body"></tbody>
+            </table>
+        </section>
+        
+    </main>
+
     <script src="js/app.js"></script>
-    <script src="js/node.js"></script>
 </body>
 </html>
